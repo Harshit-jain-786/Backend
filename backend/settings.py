@@ -82,7 +82,10 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True  # For development only
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://harshit-jain-786.github.io/TravelIndia---Frontend/"
+     "http://localhost:5174",
+    "http://localhost:5173",  # Vite default port
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:5173",
 ]
 CORS_ALLOW_METHODS = [
     'GET',
