@@ -82,11 +82,16 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True  # For development only
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-     "http://localhost:5174",
-    "http://localhost:5173",  # Vite default port
+    "http://localhost:5174",
+    "http://localhost:5173",
     "http://127.0.0.1:5174",
     "http://127.0.0.1:5173",
+    "https://travel-vista-tmy2.onrender.com",  # ✅ Render frontend
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://travel-vista-tmy2.onrender.com",
+]
+
 CORS_ALLOW_METHODS = [
     'GET',
     'POST',
