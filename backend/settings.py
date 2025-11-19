@@ -81,16 +81,23 @@ MIDDLEWARE = [
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # For development only
 CORS_ALLOW_CREDENTIALS = True
+ALLOWED_HOSTS = [
+    "*",
+    "backend-n1l0.onrender.com",
+]
+
+CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5174",
-    "http://localhost:5173",
-    "http://127.0.0.1:5174",
-    "http://127.0.0.1:5173",
-    "https://travel-vista-tmy2.onrender.com",  # ✅ Render frontend
+    # Frontend (Vite)
+    "https://travelindia-frontend-3-adw3.onrender.com",
 ]
+
 CSRF_TRUSTED_ORIGINS = [
-    "https://travel-vista-tmy2.onrender.com",
+    "https://travelindia-frontend-3-adw3.onrender.com",
+    "https://backend-n1l0.onrender.com",
 ]
+
 
 CORS_ALLOW_METHODS = [
     'GET',
