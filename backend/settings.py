@@ -68,36 +68,32 @@ INSTALLED_APPS = [
     'adventures',
 ]
 
+
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # For development only
-CORS_ALLOW_CREDENTIALS = True
-ALLOWED_HOSTS = [
-    "*",
-    "https://backend-n110.onrender.com",
+    "corsheaders.middleware.CorsMiddleware",  # MUST be at the top (or before CommonMiddleware)
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-
+# For production use explicit origins (do NOT use '*' if using cookies/credentials)
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    # Frontend (Vite)
     "https://travelindia-frontend-3-adw3.onrender.com",
 ]
 
+# If you need cookies/auth (JWT via cookie or session)
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow the frontend origin for CSRF trusted checks
 CSRF_TRUSTED_ORIGINS = [
     "https://travelindia-frontend-3-adw3.onrender.com",
-    "https://backend-n110.onrender.com",
 ]
-
+# ---------------------------------------------------
 
 CORS_ALLOW_METHODS = [
     'GET',
