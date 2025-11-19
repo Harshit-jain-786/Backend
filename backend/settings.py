@@ -84,6 +84,7 @@ CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = [
     "*",
     "backend-n1l0.onrender.com",
+    "https://travelindia-frontend-3-adw3.onrender.com",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
